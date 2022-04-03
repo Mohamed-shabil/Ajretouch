@@ -1,0 +1,11 @@
+<%- include('partials/header') %>
+<div class="form-container">
+    <form action="/admin" method="post">
+        <input type="text" name="Name" placeholder="Person Name">
+        <input type="text" name="person" placeholder="Person Image Url">
+        <textarea class="review-box" name="testimonial" placeholder="Write the Review" cols="38" rows="10"></textarea>
+        <button class="add-btn" type="submit">Submit</button>
+    </form>
+</div>
+
+    <%- include('partials/footer'); %>

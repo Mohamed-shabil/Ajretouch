@@ -1,0 +1,56 @@
+<%- include('partials/header') %>
+    <div class="test"><a class="btn" href="/admin/testimonialsetiing">Testimonial</a></div>
+    <div class="form-container">
+        <h2>Add Post</h2>
+        <form action="/admin" method="post">
+            <input type="text" required name="description" placeholder="Description" autocomplete="off">
+            <input type="text" required name="imgUrl" placeholder="Image Url" autocomplete="off">
+            <select name="category" value="category" class="category">
+                <option class="option">Select Category</option>
+                <option class="option" value="editorial">Editorial</option>
+                <option class="option" value="commercial">commercial</option>
+                <option class="option" value="fineart">Fine Art</option>
+                <option class="option" value="beforeAndafter">Before & After</option>
+            </select>
+            <button class="add-btn" type="submit">Submit</button>
+        </form>
+
+
+
+
+        <div class="posts-items">
+            <h2>Delete Post</h2>
+            <form action="/admin" method="DELETE">
+                <% post.forEach((post)=> { %>
+                    <div class="post-item">
+                        <img class="post-item-img" src=<%=post.imgUrl%> alt="" srcset="">
+                        <div class="post-item-description">
+                            <p>
+                                <%=post.description%>
+                            </p>
+                            <p>
+                                <%=post.category%>
+                            </p>
+                        </div>
+                        <input type="hidden" name="id" value=<%=post._id%> ></input>
+                        <button type="submit" class="delete"><i class="bi bi-trash"></i></button>
+                    </div>
+                    <% }) %>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // const trashcan = document.querySelector('.delete');
+        // trashcan.addEventListener('click', (e) => {
+        //     fetch('https://jsonplaceholder.typicode.com/posts/1', {
+        //         method: 'DELETE',
+        //         headers:{
+        //             "Content-Type":'Application/json'
+        //         }
+        //     }).then(response => {
+        //         return response.json()
+        //     })
+        // })
+    </script>
+    <%- include('partials/footer'); %>
