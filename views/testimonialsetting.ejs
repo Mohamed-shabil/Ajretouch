@@ -1,11 +1,40 @@
 <%- include('partials/header') %>
 <div class="form-container">
-    <form action="/admin" method="post">
-        <input type="text" name="Name" placeholder="Person Name">
-        <input type="text" name="person" placeholder="Person Image Url">
+    <form class="form" action="/admin/tesmonialsetting" method="post">
+        <input type="text" class="input_txt" name="Name" placeholder="Person Name">
+        <input type="text" class="input_txt" name="person" placeholder="Person Image Url">
         <textarea class="review-box" name="testimonial" placeholder="Write the Review" cols="38" rows="10"></textarea>
         <button class="add-btn" type="submit">Submit</button>
     </form>
-</div>
 
+    <div class="delete-review-container">
+        <h2>Delete Testimonial</h2>
+        <%Reviews.map((review) =>{%>
+            <div class="testimonial-box">
+                <img src=<%=review.personImgUrls%>  alt="">
+                <h4><%=review.personName%> </h4>
+                <p><%=review.review %> </p>
+                <i class="bi bi-trash3" onclick="deleteTestimonial(`<%=review._id%>`)"></i>
+            </div>
+        <%})%>
+    </div>
+</div>
+<script>
+    async function deleteTestimonial(id) {         
+
+        console.log(id)
+        let response = await fetch('/admin/tesmonialsetting', {
+            method: 'Delete',
+            headers: {
+                "Content-Type": 'Application/json'
+            },
+            body:JSON.stringify({
+                id:id
+            })
+        });
+        let data = await response.json();
+        alert(data.error)
+        alert("hello")
+    }
+</script>
     <%- include('partials/footer'); %>

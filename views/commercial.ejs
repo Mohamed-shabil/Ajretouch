@@ -1,0 +1,10 @@
+<%- include('partials/header') %>
+    <div class="container">
+        <div class="image-container">
+            <% posts.forEach((post)=>{ %>
+                <input type="hidden" id="img_li" value=<%=post._id%>></input>
+                <img src=<%=post.imgUrl%> alt="" srcset="">
+                <% })%>
+        </div>
+    </div>
+    <%- include('partials/footer'); %>

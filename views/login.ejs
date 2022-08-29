@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>AJ Retouch</title>
+</head>
+<style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+}
+
+.card {
+  font-family:'Poppins',sans-serif;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  margin-bottom:3em;
+  border-radius: 10px;
+  background-color: #ffff;
+  padding: 1.8rem;
+  box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  font-weight: 500;
+  margin: 0;
+  color: #132f4c;
+}
+
+
+
+.email-login {
+  display: flex;
+  flex-direction: column;
+}
+
+
+input[type="text"],
+input[type="password"] {
+  padding: 15px 20px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #f1f1f1;
+  background-color: #f3f6f9;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Poppins',sans-serif;
+}
+
+.cta-btn {
+  background-color:#57a4ff;
+  color: white;
+  padding: 18px 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  font-family: 'Poppins',sans-serif;
+}
+
+.forget-pass {
+  text-align: center;
+  display: block;
+}
+
+</style>
+<body>
+    <div class="card">
+        <form action="/login" method="post">
+           <h2 class="title"> Log in</h2>
+      
+           <div class="email-login">
+              <input type="text" placeholder="Enter Username" autocomplete="off" name="username" required>
+              <input type="password" placeholder="Enter Password" autocomplete="off" name="password" required>
+           </div>
+           <button type="submit" class="cta-btn">Log In</button>
+          
+        </form>
+     </div>
+</body>
+</html>

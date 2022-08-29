@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+
+  <div class="contact_form">
+      <form action="/contact" method="post">
+          <input type="text" class="input_name" name="name" placeholder="Name" autocomplete="off" required>
+          <input type="email" class="input_mail" name="mail" placeholder="Email" autocomplete="off" required>
+          <input type="text" class="input_sub" name="subject" placeholder="Subject" autocomplete="off" required> 
+          <textarea name="message" class="input_message" cols="30" rows="10" placeholder="Type Message"></textarea>
+          <button class="send-btn"type="submit" >Send</button>
+      </form>
+  </div>
+
+<%- include('partials/footer'); %>

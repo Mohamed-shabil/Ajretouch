@@ -1,0 +1,7 @@
+<%- include('partials/header') %>
+    <ul class="img-items">
+        <% posts.forEach((post)=>{ %>
+           <li><img src=<%=post.imgUrl%> alt=""></li>
+        <% })%>
+    </ul>
+<%- include('partials/footer'); %>

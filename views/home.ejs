@@ -1,11 +1,14 @@
 <%- include('partials/header') %>
 
-    <ul class="img-items">
+   <div class="container">
+       <div class="image-container">
         <% posts.forEach((post)=>{ %>
-            <li class="img-item">
-                <img src=<%=post.imgUrl%> alt="" srcset="">
-            </li>
+                <img src=<%=post.imgUrl%> onclick="fullscreen(`<%=post._id%>`)"alt="" srcset="">
         <% })%>
-    </ul>
-
+        <div class="fullscreenOff">
+            <img src="" alt="">
+        </div>
+      </div>       
+   </div>
 <%- include('partials/footer'); %>
+    

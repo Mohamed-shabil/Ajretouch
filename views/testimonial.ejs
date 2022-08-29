@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+
+<div class="review-container">
+   <% Reviews.forEach((review) =>{ %>
+        <div class="review-card">
+            <img src=<%=review.personImgUrls%> alt="">
+            <h4><%=review.personName%></h4>
+            <p><%=review.review%></p>
+        </div>
+    <% })%>
+</div>
+   
+<%- include('partials/footer'); %>

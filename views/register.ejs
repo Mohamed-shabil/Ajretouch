@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>AJ Retouch</title>
+</head>
+<style>
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+.card {
+  font-family: 'Poppins',sans-serif;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  background-color: #ffff;
+  padding: 1.8rem;
+  box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.1);
+}
+.title {
+  text-align: center;
+  font-weight: 500;
+  margin: 0;
+}
+.subtitle {
+  text-align: center;
+  font-weight: 300;
+}
+
+
+.email-login {
+  display: flex;
+  flex-direction: column;
+}
+
+
+input[type="text"],
+input[type="password"] {
+  padding: 15px 20px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #f1f1f1;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color:#f3f6f9;
+  outline: none;
+}
+
+.cta-btn {
+  background-color: #57a4ff;
+  color: white;
+  padding: 18px 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+
+</style>
+<body>
+    <div class="card">
+        <form action="/register" method="post">
+           <h2 class="title">Register</h2>
+      
+           <div class="email-login">
+              
+              <input type="text" placeholder="Enter Username " name="username" autocomplete="off" required>
+              <input type="password" placeholder="Enter Password" name="password" autocomplete="off" required>
+           </div>
+           <button type="submit" class="cta-btn">Register</button>
+          
+        </form>
+     </div>
+</body>
+</html>

@@ -1,11 +1,14 @@
 <%- include('partials/header') %>
-    <div class="test"><a class="btn" href="/admin/testimonialsetiing">Testimonial</a></div>
+    <div class="test">
+        <a class="btn" href="/admin/testimonialsetting">Testimonial</a>
+        <a class="btn" href="/register">Register</a>
+    </div>
     <div class="form-container">
         <h2>Add Post</h2>
-        <form action="/admin" method="post">
-            <input type="text" required name="description" placeholder="Description" autocomplete="off">
-            <input type="text" required name="imgUrl" placeholder="Image Url" autocomplete="off">
-            <select name="category" value="category" class="category">
+        <form class="form" action="/admin" method="post">
+            <input type="text" class="input_txt" required name="description" placeholder="Description" autocomplete="off">
+            <input type="text" class="input_txt" required name="imgUrl" placeholder="Image Url" autocomplete="off">
+            <select name="category" value="category" required class="category">
                 <option class="option">Select Category</option>
                 <option class="option" value="editorial">Editorial</option>
                 <option class="option" value="commercial">commercial</option>
@@ -20,7 +23,7 @@
 
         <div class="posts-items">
             <h2>Delete Post</h2>
-            <form action="/admin" method="DELETE">
+            <form action="/admin">
                 <% post.forEach((post)=> { %>
                     <div class="post-item">
                         <img class="post-item-img" src=<%=post.imgUrl%> alt="" srcset="">
@@ -32,25 +35,32 @@
                                 <%=post.category%>
                             </p>
                         </div>
-                        <input type="hidden" name="id" value=<%=post._id%> ></input>
-                        <button type="submit" class="delete"><i class="bi bi-trash"></i></button>
+                        <input type="hidden" name="id" id="f" value=<%=post._id%>></input>
+                        <button onclick="myFunction(`<%=post._id%>`)" class="delete"><i class="bi bi-trash"></i></button>
                     </div>
-                    <% }) %>
+                <%})%>
             </form>
         </div>
     </div>
 
     <script>
-        // const trashcan = document.querySelector('.delete');
-        // trashcan.addEventListener('click', (e) => {
-        //     fetch('https://jsonplaceholder.typicode.com/posts/1', {
-        //         method: 'DELETE',
-        //         headers:{
-        //             "Content-Type":'Application/json'
-        //         }
-        //     }).then(response => {
-        //         return response.json()
-        //     })
-        // })
+        async function myFunction(id) {
+
+            // const id= document.getElementById("f").value
+            // console.log(id);           
+            
+            let response = await fetch('/admin', {
+                method: 'Delete',
+                headers: {
+                    "Content-Type": 'Application/json'
+                },
+                body:JSON.stringify({
+                    id:id
+                })
+            });
+            let data = await response.json();
+            alert(data.error)
+            alert("hello")
+        }
     </script>
     <%- include('partials/footer'); %>
